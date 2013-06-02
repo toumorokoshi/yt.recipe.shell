@@ -10,6 +10,7 @@ setup(name='yt.recipe.shell',
       description='A buildout recipe to add in shell commands',
       author='Yusuke Tsutsumi',
       author_email='yusuke@yusuketsutsumi.com',
+      url='http://github.com/toumorokoshi/yt.recipe.shell',
       packages=['yt.recipe'],
       classifiers=[
           'Development Status :: 4 - Beta',
