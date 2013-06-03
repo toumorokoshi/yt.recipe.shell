@@ -14,6 +14,7 @@ setup(name='yt.recipe.shell',
       packages=['yt.recipe'],
       classifiers=[
           'Development Status :: 4 - Beta',
+          'License :: OSI Approved :: MIT License',
           'Topic :: Software Development :: Build Tools',
           'Programming Language :: Python',
           'Programming Language :: Python :: 2.6',

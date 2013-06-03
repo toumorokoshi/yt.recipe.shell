@@ -4,6 +4,7 @@ A recipe to add a shell command into buildout's bin/ folder
 Example buildout recipe:
 [django-test]
 recipe = yt.recipe.shell
+executable = /bin/bash
 script = ./bin/django test myapp
 name = test
 
@@ -12,7 +13,6 @@ bin/test
 """
 import logging
 import os
-import stat
 import zc.buildout
 
 
@@ -25,12 +25,14 @@ class Shell(object):
         for param in ['script', 'name']:
             if param not in options:
                 raise zc.buildout.UserError('%s variable is required!' % param)
+        self.executable = "/usr/bin/env sh" if 'executable' in self.options else self.options['executable']
         self.script = options['script']
         self.script_name = options['name']
 
     def install(self):
         script_path = os.path.join(self.buildout['buildout']['directory'], 'bin', self.script_name)
         with open(script_path, 'w') as fh:
+            fh.write("#!%s\n" % self.executable)
             fh.write(self.script)
         os.chmod(script_path, 509)  # 509 is 0775
         return script_path
