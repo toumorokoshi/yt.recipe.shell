@@ -25,7 +25,7 @@ class Shell(object):
         for param in ['script', 'name']:
             if param not in options:
                 raise zc.buildout.UserError('%s variable is required!' % param)
-        self.executable = "/usr/bin/env sh" if 'executable' in self.options else self.options['executable']
+        self.executable = self.option['executable'] if 'executable' in self.options else "/usr/bin/env sh"
         self.script = options['script']
         self.script_name = options['name']
 
