@@ -6,12 +6,13 @@ except:
     from distutils.core import setup
 
 setup(name='yt.recipe.shell',
-      version='0.1.3',
+      version='0.1.4',
       description='A buildout recipe to add in shell commands',
       author='Yusuke Tsutsumi',
       author_email='yusuke@yusuketsutsumi.com',
       url='http://github.com/toumorokoshi/yt.recipe.shell',
       packages=['yt.recipe'],
+      long_description=open('README.rst').read(),
       classifiers=[
           'Development Status :: 4 - Beta',
           'License :: OSI Approved :: MIT License',
