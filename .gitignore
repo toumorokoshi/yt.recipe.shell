@@ -1,2 +1,4 @@
 *.py[cod]
 yt.recipe.shell.egg-info/
+build
+dist
