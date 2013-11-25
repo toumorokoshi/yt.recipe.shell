@@ -6,7 +6,7 @@ except:
     from distutils.core import setup
 
 setup(name='yt.recipe.shell',
-      version='0.1.5',
+      version='0.1.6',
       description='A buildout recipe to add in shell commands',
       author='Yusuke Tsutsumi',
       author_email='yusuke@yusuketsutsumi.com',
